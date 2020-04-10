@@ -15,11 +15,9 @@ import (
 
 const (
 	// Maximum absolute skew factor of a single digit.
-	maxSkew = 0.9
+	maxSkew = 0.6
 	// Number of background circles.
 	circleCount = 10
-
-	digitSpace = 5
 )
 
 type Image struct {
@@ -133,7 +131,7 @@ func (m *Image) calculateSizes(width, height, ncount int) {
 	}
 	// Save everything, making the actual width smaller by 1 dot to account
 	// for spacing between digits.
-	m.numWidth = int(nw) - m.dotSize + digitSpace
+	m.numWidth = int(nw) - m.dotSize
 	m.numHeight = int(nh)
 }
 
