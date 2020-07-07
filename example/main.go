@@ -22,7 +22,7 @@ func main() {
 			panic(err)
 		}
 	})
-	log.Printf("open url: http://localhost%s?code=BACDL123\n and try to change the 'code' parameter", addr)
+	log.Printf("open url: http://localhost%s?code=BACDL123 and try to change the 'code' parameter\n", addr)
 	err := http.ListenAndServe(addr, nil)
-	panic(err)
+	log.Println(err)
 }

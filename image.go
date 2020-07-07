@@ -31,8 +31,8 @@ type Image struct {
 // NewImage returns a new captcha image of the given width and height with the
 // given digits, where each digit must be in range 0-9.
 func NewImage(id string, digits []byte, width, height int) *Image {
+	digits = bytes.ToUpper(digits)
 	m := new(Image)
-
 	// Initialize PRNG.
 	m.rng.Seed(deriveSeed(imageSeedPurpose, id, digits))
 
